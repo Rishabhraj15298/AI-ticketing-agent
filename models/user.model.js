@@ -19,8 +19,8 @@ const UserSchema = new mongoose.Schema ({
         enum : ["user" , "admin" , "moderator"]
     },
     skills : 
-        [string]
+        [String]
     
 } , { timestamps : true} )
 
-export default User = mongoose.model('User' , UserSchema);
+export default mongoose.model('User' , UserSchema);

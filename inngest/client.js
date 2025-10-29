@@ -1,3 +1,3 @@
-import {inngest} from "inngest"
+import {Inngest} from "inngest"
 
-export const inngest = new inngest ({id : "ticketing-system"})
+export const inngest = new Inngest ({id : "ticketing-system"})

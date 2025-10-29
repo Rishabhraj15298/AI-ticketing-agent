@@ -4,9 +4,10 @@ import cors from "cors"
 import { serve } from "inngest/express";
 import mongoose from "mongoose"
 import userRoutes from "./route/user.js"
-import { onUserSignup } from './inngest/function/on-signup'
-import ticketRoutes from "./routes/ticket.js";
+import { onUserSignup } from './inngest/function/on-signup.js'
+import ticketRoutes from "./route/ticket.js";
 import { onTicketCreated } from './inngest/function/on-ticket-create.js'
+import { inngest } from './inngest/client.js';
 
 dotenv.config()
 
@@ -24,7 +25,7 @@ app.use(
     "/api/inngest",
     serve({
         client : inngest,
-        function : [onUserSignup , onTicketCreated]
+        functions : [onUserSignup , onTicketCreated]
     })
     
 )

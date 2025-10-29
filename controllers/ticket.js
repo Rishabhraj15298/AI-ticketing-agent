@@ -1,4 +1,4 @@
-import { inngest } from "../inngest/client";
+import { inngest } from "../inngest/client.js";
 import Ticket from "../models/ticket.model.js";
 
 // 🎫 Create a Ticket
