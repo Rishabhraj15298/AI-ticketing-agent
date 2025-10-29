@@ -1,9 +1,12 @@
 import express from 'express'
 import dotenv from "dotenv"
 import cors from "cors"
+import { serve } from "inngest/express";
 import mongoose from "mongoose"
 import userRoutes from "./route/user.js"
 import { onUserSignup } from './inngest/function/on-signup'
+import ticketRoutes from "./routes/ticket.js";
+import { onTicketCreated } from './inngest/function/on-ticket-create.js'
 
 dotenv.config()
 
@@ -14,13 +17,14 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth" , userRoutes)
+app.use("/api/tickets" , ticketRoutes)
 
 
 app.use(
     "/api/inngest",
     serve({
         client : inngest,
-        function : [onUserSignup , ]
+        function : [onUserSignup , onTicketCreated]
     })
     
 )
