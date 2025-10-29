@@ -1,6 +1,6 @@
 import express from 'express'
-import { getUser, login, logout, signup, updateUser } from '../AI-ticketing-Backend/controllers/user.js'
-import { authenticate } from '../AI-ticketing-Backend/middleware/auth.js'
+import { getUser, login, logout, signup, updateUser } from '../controllers/user.js'
+import { authenticate } from '../middleware/auth.js'
 
 
 const router = express.Router()

@@ -1,10 +1,10 @@
 // 📦 Importing all required modules
 import { inngest } from "../client.js";
-import Ticket from "../../../models/ticket.model.js";
-import User from "../../../models/user.model.js";
+import Ticket from "../../models/ticket.model.js";
+import User from "../../models/user.model.js";
 import { NonRetriableError } from "inngest";
-import { sendMail } from "../../../utils/mailer.js";
-import analyzeTicket from "../../../utils/ai.js";
+import { sendMail } from "../../utils/mailer.js";
+import analyzeTicket from "../../utils/ai.js";
 
 // 🧩 Inngest function that runs jab bhi 'ticket/created' event trigger hota hai
 export const onTicketCreated = inngest.createFunction(
